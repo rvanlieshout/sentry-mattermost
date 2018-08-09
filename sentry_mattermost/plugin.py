@@ -31,8 +31,8 @@ import sentry_mattermost
 
 
 def get_project_full_name(project):
-    if project.team.name not in project.name:
-        return '%s %s' % (project.team.name, project.name)
+    # if project.team.name not in project.name:
+    #     return '%s %s' % (project.team.name, project.name)
     return project.name
 
 
@@ -48,7 +48,7 @@ def get_tags(event):
     if not tag_list:
         return ()
 
-    return ((tagstore.get_tag_key_label(k), tagstore.get_tag_value_label(k, v)) 
+    return ((tagstore.get_tag_key_label(k), tagstore.get_tag_value_label(k, v))
             for k, v in tag_list)
 
 
